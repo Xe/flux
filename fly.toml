@@ -16,8 +16,8 @@ primary_region = 'ord'
   COG_LOG_LEVEL = 'debug'
 
 [[mounts]]
-  source = 'sd3_cache'
-  destination = '/src/sd3-cache'
+  source = 'flux_cache'
+  destination = '/src/flux-cache'
   initial_size = '50G'
 
 [http_service]
@@ -33,6 +33,6 @@ primary_region = 'ord'
   local_path = './start.sh'
 
 [[vm]]
-  size = 'performance-8x'
+  size = 'performance-2x'
   memory = '16gb'
-  gpu_kind = 'l40s'
+  gpu_kind = 'l40s'  gpu_kind = 'a100-pcie-40gb'
