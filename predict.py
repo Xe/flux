@@ -133,6 +133,12 @@ class Predictor(BasePredictor):
         guidance_scale: float = Input(
             description="Scale for classifier-free guidance", ge=0, le=50, default=0.0
         ),
+        max_sequence_length : int = Input(
+            description="Max sequence length", ge=1, le=2048, default=256
+        ),
+        num_inference_steps: int = Input(
+            description="Number of inference steps", ge=1, le=100, default=50
+        ),
         prompt_strength: float = Input(
             description="Prompt strength when using img2img. 1.0 corresponds to full destruction of information in image",
             ge=0.0,
@@ -155,8 +161,6 @@ class Predictor(BasePredictor):
 
         width, height = self.aspect_ratio_to_width_height(aspect_ratio)
 
-        num_inference_steps = 4
-
         flux_kwargs = {}
         print(f"Prompt: {prompt}")
         if image:
@@ -175,7 +179,7 @@ class Predictor(BasePredictor):
         common_args = {
             "prompt": [prompt] * num_outputs,
             "guidance_scale": guidance_scale,
-            "max_sequence_length": 256,
+            "max_sequence_length": max_sequence_length,
             "generator": generator,
             "num_inference_steps": num_inference_steps,
         }

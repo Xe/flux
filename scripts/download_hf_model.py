@@ -9,7 +9,7 @@ def main():
     token = os.environ["HUGGING_FACE_HUB_TOKEN"]
     login(token)
     pipe = FluxPipeline.from_pretrained(
-        "black-forest-labs/FLUX.1-schnell", torch_dtype=torch.bfloat16
+        "black-forest-labs/FLUX.1-dev", torch_dtype=torch.bfloat16
     )
     pipe = pipe.to("cuda")
 
