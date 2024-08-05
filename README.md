@@ -32,14 +32,18 @@ fly deploy
 ## Example Request
 
 ```sh
-curl --silent https://[APP_NAME].fly.dev/predictions \
-    --request POST \
+curl --silent https://cog-flux.fly.dev/predictions/test \
+    --request PUT \
     --header "Content-Type: application/json" \
-    --data @- << 'EOF'
+    --data @- << 'EOF' | jq
 {
     "input": {
-        "prompt": "a magical forest",
-        "aspect_ratio": "3:2"
+        "prompt": "Starry night dreamscape with purple hot-air balloons",
+        "aspect_ratio": "16:9",
+        "guidance_scale": 3.5,
+        "num_inference_steps": 50,
+        "max_sequence_length": 512,
+        "output_format": "png"
     }
 }
 EOF
