@@ -1,8 +1,8 @@
 #!/bin/bash
 
-mkdir -p /src/sd3-cache/public
+mkdir -p /src/flux-cache/public
 
-if [ ! -f /src/sd3-cache/model_index.json ]; then
+if [ ! -f /src/flux-cache/model_index.json ]; then
     python /src/scripts/download_hf_model.py
 fi
 
