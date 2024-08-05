@@ -3,6 +3,9 @@
     <p>Run <strong><a href="https://huggingface.co/black-forest-labs/FLUX.1-schnell">Flux</a></strong> as a Replicate Cog on Fly.io!</p>
 </div>
 
+![Untitled](https://github.com/user-attachments/assets/fec35726-e1c2-48a3-904c-c8c50daa6b54)
+
+
 Flux is one of the most advanced text-to-image model families yet. This demo exposes the Schenll or Dev model via a simple HTTP server, thanks to [Replicate Cog](https://github.com/replicate/cog). Cog is an open-source tool that lets you package machine learning models in a standard, production-ready container. When you're up and running, you can generate images using the `/predictions` endpoint. Images are automatically stored in object-storage on [Tigris](https://www.tigrisdata.com/) (you'll need to make sure you add a bucket to the app).
 
 ## Deploy to Fly.io
