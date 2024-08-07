@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for sd3 on 2024-06-13T13:34:45+02:00
+# fly.toml app configuration file generated for xe-flux on 2024-08-07T09:21:35-05:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = ''
+app = 'xe-flux'
 primary_region = 'ord'
 
 [experimental]
@@ -23,7 +23,7 @@ primary_region = 'ord'
 [http_service]
   internal_port = 5000
   force_https = true
-  auto_stop_machines = true
+  auto_stop_machines = 'stop'
   auto_start_machines = true
   min_machines_running = 0
   processes = ['app']
@@ -35,4 +35,5 @@ primary_region = 'ord'
 [[vm]]
   size = 'performance-2x'
   memory = '16gb'
-  gpu_kind = 'l40s'  gpu_kind = 'a100-pcie-40gb'
+  cpu_kind = 'performance'
+  cpus = 2
